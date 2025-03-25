@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="portfolio.css" />
+    <link rel="icon" href="favicon.webp" type="image/png" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a href="portfolio.html" class="logo">Yonatan Daniel</a>
+      <nav class="navbar">
+        <a href="portfolio.html">Home</a>
+        <a href="skills.html">Skills</a>
+        <a href="portfoliopage.html">Portfolio</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </header>
+
+    <section class="contact">
+      <h2>Contact Me</h2>
+      <p>
+        Feel free to reach out for any inquiries or collaboration opportunities.
+      </p>
+      <div class="contact-container">
+        <form
+          action="https://formspree.io/f/xovelvdr"
+          method="POST"
+          id="contact-form"
+          onsubmit="handleSubmit(event)"
+        >
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
+
+          <label for="message">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Your Message"
+            rows="4"
+            required
+          ></textarea>
+
+          <button type="submit">Send Message</button>
+          <div class="success-message" style="display: none">
+            Thank you for contacting us!
+          </div>
+          <div class="error-message" style="display: none">
+            Something went wrong, please try again.
+          </div>
+        </form>
+      </div>
+    </section>
+    <script>
+      const form = document.getElementById("contact-form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Disable the submit button to prevent multiple submissions
+        const submitButton = form.querySelector("button[type='submit']");
+        submitButton.disabled = true;
+
+        // Show loading message (optional)
+        const successMessage = document.querySelector(".success-message");
+        const errorMessage = document.querySelector(".error-message");
+
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+        })
+          .then((response) => {
+            if (response.ok) {
+              // Success: Show success message and clear the form
+              //successMessage.style.display = "block";
+              //errorMessage.style.display = "none";
+              //form.reset(); // Clear the form fields
+            } else {
+              // Error: Show error message
+              //successMessage.style.display = "none";
+              //errorMessage.style.display = "block";
+            }
+          })
+          .catch(() => {
+            // Error: Show error message if the request fails
+            //successMessage.style.display = "none";
+            //errorMessage.style.display = "block";
+          })
+          .finally(() => {
+            // Re-enable the submit button
+            alert("Thank you for contacting us! Your message has been sent.");
+
+            // Clear form fields
+            form.reset();
+            submitButton.disabled = false;
+          });
+      });
+    </script>
+  </body>
+</html>
