@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Portfolio.</title>
+    <title>My Projects</title>
     <link rel="stylesheet" href="portfolio.css" />
     <link rel="icon" href="favicon.webp" type="image/png" />
     <link
@@ -14,43 +14,64 @@
   </head>
   <body>
     <header class="header">
-      <a href="#" class="logo">Yonatan Daniel</a>
+      <a href="index.html class="logo">Yonatan Daniel</a>
       <nav class="navbar">
-        <a href="#" class="active">Home</a>
+        <a href="index.html">Home</a>
         <a href="skills.html">Skills</a>
-        <a href="portfoliopage.html">Portfolio</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
-    <section class="home">
-      <div class="home-content">
-        <h1>Hi, I'm Yonatan Daniel</h1>
-        <h3>Full-stack Developer</h3>
-        <p>
-          As a passionate Full Stack Developer, I specialize in building
-          dynamic, modern web applications from the ground up. With expertise in
-          both front-end and back-end technologies, I create seamless and
-          efficient user experiences that are not only visually appealing but
-          also highly functional. I enjoy solving real-world problems through
-          code, continuously learning new tools and techniques to stay ahead in
-          the ever-evolving tech landscape.
-        </p>
-        <div class="btn-box">
-          <a href="contact.html">Hire Me</a>
+    <section class="portfolio">
+      <h2>My Projects</h2>
+      <div class="portfolio-container">
+        <div class="project">
+          <div class="project-details">
+            <h3>Healthcare App</h3>
+            <p>A full-stack healthcare platform for online consultations.</p>
+            <a
+              href="https://github.com/yoni-54/nextjs-healthcare-app"
+              target="_blank"
+              >View on GitHub</a
+            ><br />
+            <a
+              href="https://nextjs-healthcare-app-8vzv.vercel.app/"
+              target="_blank"
+              >View Website</a
+            >
+          </div>
         </div>
-      </div>
 
-      <div class="home-sci">
-        <a href="https://t.me/Yoni_54" target="_blank"
-          ><i class="bx bxl-telegram"></i
-        ></a>
-        <a href="https://github.com/yoni-54" target="_blank"
-          ><i class="bx bxl-github"></i
-        ></a>
-        <a href="https://www.linkedin.com/in/yonatan-daniel54" target="_blank"
-          ><i class="bx bxl-linkedin"></i
-        ></a>
+        <div class="project">
+          <div class="project-details">
+            <h3>Giftshop Website</h3>
+            <p>
+              A Laravel-based gift shop with an admin panel to manage products,
+              categories, and orders.
+            </p>
+            <a
+              href="https://github.com/yoni-54/laravel-giftshop"
+              target="_blank"
+              >View on GitHub</a
+            >
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-details">
+            <h3>Vehicle Management System</h3>
+            <p>
+              A simple C# application that allows users to Create, Read, Update,
+              and Delete (CRUD) vehicles in a fleet.
+            </p>
+            <a
+              href="https://github.com/yoni-54/vehicle-managment-system"
+              target="_blank"
+              >View on GitHub</a
+            >
+          </div>
+        </div>
       </div>
     </section>
   </body>
